@@ -1,92 +1,41 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-absolute-path */
+/* eslint-disable import/no-cycle */
+/* eslint-disable comma-dangle */
+/* eslint-disable object-curly-newline */
 import { DateTime } from '/modules/luxon.js';
+import appendBook from './modules/appendBook.js';
+import displaySection from './modules/displaySection.js';
+import NewBook from './modules/bookClass.js';
 
 // selectors
 const btn = document.querySelector('#btn');
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
-const book = document.querySelector('#content');
+export const book = document.querySelector('#content');
 const myDate = document.querySelector('.date');
-const data = JSON.parse(localStorage.getItem('bookData')) || [];
-const li = document.querySelectorAll('.nav-links a');
-const newForm = document.getElementById('newform');
-const contact = document.getElementById('contact');
+export const data = JSON.parse(localStorage.getItem('bookData')) || [];
+export const li = document.querySelectorAll('.nav-links a');
+export const newForm = document.getElementById('newform');
+export const contact = document.getElementById('contact');
 const section = document.createElement('section');
-const form = document.querySelector('.form');
+export const form = document.querySelector('.form');
+section.className = 'books_container';
+const h1 = document.createElement('h1');
+h1.innerText = 'All awesome books';
+h1.className = 'books_header';
 
-// functionality to display element on the page
-const handleDisplay = (element) => {
-  if (element.innerText === 'Add new') {
-    newForm.style.display = 'contents';
-  } else if (element.innerText === 'List') {
-    book.style.display = 'contents';
-  } else if (element.innerText === 'Contact') {
-    contact.style.display = 'contents';
-  }
-};
-
+// changing the dom element on nav clicks
 li.forEach((item) => {
-  item.addEventListener('click', (e) => {
-    li.forEach((item) => {
-      item.classList.remove('active');
-      newForm.style.display = 'none';
-      contact.style.display = 'none';
-      book.style.display = 'none';
-    });
-    e.target.classList.toggle('active');
-    handleDisplay(e.target);
-  });
+  displaySection(item, li);
 });
-
-const handleAppendChild = (item, myMethod) => {
-  const div = document.createElement('div');
-  div.className = 'book_item';
-  const h2 = document.createElement('h1');
-  h2.className = 'book_description';
-  h2.innerText = `${item.title.charAt(0).toUpperCase()}${item.title
-    .split('')
-    .splice(1)
-    .join('')} by ${item.author.charAt(0).toUpperCase()}${item.author
-    .split('')
-    .splice(1)
-    .join('')}`;
-  const button = book.appendChild(document.createElement('button'));
-  button.innerText = 'Remove';
-  button.className = 'book_button';
-  div.appendChild(h2);
-  div.appendChild(button);
-  section.appendChild(div);
-  book.appendChild(section);
-  button.addEventListener('click', () => {
-    myMethod.deleteItem(item.id, div);
-  });
-};
 
 myDate.innerText = DateTime.now().toLocaleString(
   DateTime.DATETIME_MED_WITH_SECONDS
 );
-// myDate.innerText = DateTime.now().toFormat('LLL dd yyyy, hh:mm:ss');
-class NewBook {
-  addItem = (item) => {
-    if (item) {
-      data.push(item);
-      localStorage.setItem('bookData', JSON.stringify(data));
-    }
-    form.reset();
-  };
 
-  deleteItem = (id, div) => {
-    data.filter((val, ind, arr) => {
-      if (id === val.id) {
-        section.removeChild(div);
-        arr.splice(ind, 1);
-        return true;
-      }
-      return false;
-    });
-    localStorage.setItem('bookData', JSON.stringify(data));
-  };
-}
-const myMethod = new NewBook();
+// instantiate a new book using the NewBook class
+const myMethod = new NewBook(section);
 
 // button to add a book to the book lists
 btn.addEventListener('click', (e) => {
@@ -97,17 +46,14 @@ btn.addEventListener('click', (e) => {
     author: author.value,
   };
   myMethod.addItem(item);
-  handleAppendChild(item, myMethod);
+  appendBook(book, section, item, myMethod);
 });
 
-section.className = 'books_container';
-const h1 = document.createElement('h1');
-h1.innerText = 'All awesome books';
-h1.className = 'books_header';
+// functionality to display the booklist header when there is atleast one book in the list
 if (data.length > 0) {
   book.appendChild(h1);
 }
 
 data.forEach((item) => {
-  handleAppendChild(item, myMethod);
+  appendBook(book, section, item, myMethod);
 });
