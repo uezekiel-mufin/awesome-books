@@ -3,10 +3,10 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable comma-dangle */
 /* eslint-disable object-curly-newline */
-import { DateTime } from './modules/luxon.js';
-import appendBook from './modules/appendBook.js';
-import displaySection from './modules/displaySection.js';
-import NewBook from './modules/bookClass.js';
+import { DateTime } from '../modules/luxon.js';
+import appendBook from '../modules/appendBook.js';
+import displaySection from '../modules/displaySection.js';
+import NewBook from '../modules/bookClass.js';
 
 // selectors
 const btn = document.querySelector('#btn');
