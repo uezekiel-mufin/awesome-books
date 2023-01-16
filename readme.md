@@ -51,7 +51,7 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 [Awesome Books] <a name="about-project"></a>
 
-**Library of Books**
+- Awesome books is a project to show how SPA works using ES6 code syntax and Modules to seperate functionalites
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -117,7 +117,8 @@ To run the project, execute the following command:
 
 ### Deployment
 
-- You can deploy this project using:
+You can deploy this project using:
+
 - [vercel](https://vercel.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
