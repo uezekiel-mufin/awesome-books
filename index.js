@@ -1,3 +1,6 @@
+import { DateTime } from '/modules/luxon.js';
+
+// selectors
 const btn = document.querySelector('#btn');
 const title = document.querySelector('#title');
 const author = document.querySelector('#author');
@@ -58,9 +61,10 @@ const handleAppendChild = (item, myMethod) => {
   });
 };
 
-let d = new Date().toUTCString();
-d = d.toString();
-myDate.innerText = d;
+myDate.innerText = DateTime.now().toLocaleString(
+  DateTime.DATETIME_MED_WITH_SECONDS
+);
+// myDate.innerText = DateTime.now().toFormat('LLL dd yyyy, hh:mm:ss');
 class NewBook {
   addItem = (item) => {
     if (item) {
