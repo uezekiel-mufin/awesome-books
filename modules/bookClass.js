@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { data, form } from '../index.js';
 
 class NewBook {
