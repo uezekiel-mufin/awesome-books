@@ -49,7 +49,7 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Concert Planner] <a name="about-project"></a>
+# 📖 [Awesome Books] <a name="about-project"></a>
 
 **Library of Books**
 
@@ -68,6 +68,7 @@ After you're finished please remove all the comments and instructions!
 ### Key Features <a name="key-features"></a>
 
 - **Dynamic Content**
+- **ES6 Modules and Arrow functions**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -75,11 +76,7 @@ After you're finished please remove all the comments and instructions!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]()
-
-## Loom Video <a name="loom"></a>
-
-- [Video Link]()
+- No live demo for this project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -100,23 +97,40 @@ In order to run this project you need:
 
 ### Setup
 
-> Clone this repository to your desired folder:
+Clone this repository to your desired folder:
 
-git clone git@github.com:Shakir-Hussain12/AwesomeBooks.git
+- cd my-folder
+- git clone https://github.com/Ezzywealth/awesome-books
+
+### Install
+
+Install this project with:
+
+- cd my-project
+- npm install
+
+### Usage
+
+To run the project, execute the following command:
+
+- run with live server
+
+### Deployment
+
+- You can deploy this project using:
+- [vercel](https://vercel.com)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Shakir Hussain**
+### Author1
 
-- GitHub: [@Shakir-Hussain12](https://github.com/Shakir-Hussain12)
-- Twitter: [@S_Hussain_99](https://twitter.com/S_Hussain_99)
-- LinkedIn: [Shakir-Hussain](https://linkedin.com/in/shakir-hussain-2129a121b/)
-
-👤 **Ezekiel Udiomuno**
-
-- GitHub: [@Shakir-Hussain12](https://github.com/Ezzywealth)
+- GitHub: [@Ezzywealth](https://github.com/Ezzywealth)
+- Twitter: [@EzzyWealth](https://twitter.com/EzzyWealth)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ezekiel-udiomuno-b14539150/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -124,7 +138,7 @@ git clone git@github.com:Shakir-Hussain12/AwesomeBooks.git
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Refactor code with classes**
+- [ ] None at the moment
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
