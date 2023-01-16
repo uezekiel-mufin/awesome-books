@@ -6,6 +6,9 @@ class NewBook {
   }
 
   addItem = (item) => {
+    if (data.length === 0) {
+      window.location.reload();
+    }
     if (item) {
       data.push(item);
       localStorage.setItem('bookData', JSON.stringify(data));
@@ -23,6 +26,9 @@ class NewBook {
       return false;
     });
     localStorage.setItem('bookData', JSON.stringify(data));
+    if (data.length < 1) {
+      window.location.reload();
+    }
   };
 }
 

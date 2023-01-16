@@ -52,6 +52,10 @@ btn.addEventListener('click', (e) => {
 // functionality to display the booklist header when there is atleast one book in the list
 if (data.length > 0) {
   book.appendChild(h1);
+} else {
+  const h2 = document.createElement('h2');
+  h2.innerText = 'There are no books in your book list';
+  book.appendChild(h2);
 }
 
 data.forEach((item) => {
